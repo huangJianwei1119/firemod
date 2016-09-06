@@ -2687,7 +2687,7 @@ d_Wtr *a;
     else {
       iX++;                             /* each stored struct of obsvrd data */
       i_Mth = a[iX].i_Mth;
-
+    }
     SetWeatherData(   /* Load into FlamMap class           */
                StationNumber,  /*        long StationNumber         */
                i,              /*        long NumObs,               */
