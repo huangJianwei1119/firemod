@@ -2,7 +2,7 @@ FARSITE Instructions
 
 Extract the contents of the compressed file to a directory. Navigate to the extracted FARSITE directory, and build TestFARSITE:
 
-make -f makefile.txt
+make -k
 
 TestFARSITE is a command-line program for running FARSITE. It takes one required parameter, which is a path to a command file. A FARSITE command file contains the necessary parameters for individual FARSITE runs, one command per line.
 
