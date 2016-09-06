@@ -1,0 +1,30 @@
+FARSITE Instructions
+
+Extract the contents of the compressed file to a directory. Navigate to the extracted FARSITE directory, and build TestFARSITE:
+
+make –f makefile.txt
+
+TestFARSITE is a command-line program for running FARSITE. It takes one required parameter, which is a path to a command file. A FARSITE command file contains the necessary parameters for individual FARSITE runs, one command per line.
+
+The format for each command line in the command file is:
+[LCPName] [InputsFileName] [IgnitionFileName] [BarrierFileName] [outputDirPath] [outputsType]
+
+Where:
+[LCPName] is the path to the Landscape File
+[InputsFileName] is the path to the FARSITE Inputs file
+[IgnitionFileName] is the path to the Ignition shape file
+[BarrierFileName] is the path to the Barrier shape file (0 if no barrier)
+[outputsDirPath] is the path to the output file base name (no extension)
+[outputsType] is the file type for outputs (0 = both, 1 = ascii grid, 2 = FlamMap binary grid
+
+TestFARSITE will run each FARSITE in the command file. The command file can have however many FARSITE commands as desired.
+
+This distribution contains sample data for testing TestFARSITE residing in the Panther subdirectory. The command file “runPanther.txt” is set up to run two FARSITE runs. 
+
+To test the program with this data from the FARSITE directory, enter:
+./TestFARSITE ./Panther/runPanther.txt
+
+TestFARSITE will run both FARSITE runs as configured in the inputs files. Output will include grids of Arrival Time, Crown Fire, Flame Length, Heat per Unit Area, Ignitions,  Intensity, Reaction Intensity, Spread Rate and Spread direction, as well as perimeter shape file, spots shape file and csv, and a ‘timings’ file with settings and run times.
+
+
+
