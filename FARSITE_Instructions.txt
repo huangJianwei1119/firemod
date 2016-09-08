@@ -2,7 +2,7 @@ FARSITE Instructions
 
 Extract the contents of the compressed file to a directory. Navigate to the extracted FARSITE directory, and build TestFARSITE:
 
-make -k
+make
 
 TestFARSITE is a command-line program for running FARSITE. It takes one required parameter, which is a path to a command file. A FARSITE command file contains the necessary parameters for individual FARSITE runs, one command per line.
 
@@ -22,6 +22,6 @@ TestFARSITE will run each FARSITE in the command file. The command file can have
 This distribution contains sample data for testing TestFARSITE residing in the Panther subdirectory. The command file "runPanther.txt" is set up to run two FARSITE runs. 
 
 To test the program with this data from the FARSITE directory, enter:
-./TestFARSITE ./Panther/runPanther.txt
+./bin/TestFARSITE ./Panther/runPanther.txt
 
 TestFARSITE will run both FARSITE runs as configured in the inputs files. Output will include grids of Arrival Time, Crown Fire, Flame Length, Heat per Unit Area, Ignitions,  Intensity, Reaction Intensity, Spread Rate and Spread direction, as well as perimeter shape file, spots shape file and csv, and a "timings" file with settings and run times.
