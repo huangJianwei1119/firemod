@@ -2226,7 +2226,7 @@ void Intersections::CheckEnvelopedFires(long Fire1, long Fire2)
 {
 	long i, j, k, m;
 	long NumPts1, NumPts2;
-	long NumSmall, FireSmall, FireBig, NumBig;
+	long NumSmall, FireSmall, FireBig; /*, NumBig; */
 	long Inside1, Inside2;
 	double XLo1, XLo2, XHi1, XHi2;
 	double YLo1, YLo2, YHi1, YHi2;
@@ -2250,14 +2250,14 @@ void Intersections::CheckEnvelopedFires(long Fire1, long Fire2)
 	if ((XHi1 - XLo1) * (YHi1 - YLo1) < (XHi2 - XLo2) * (YHi2 - YLo2))
 	{
 		NumSmall = NumPts1;
-		NumBig = NumPts2;
+		//NumBig = NumPts2;
 		FireSmall = Fire1;
 		FireBig = Fire2;
 	}
 	else
 	{
 		NumSmall = NumPts2;
-		NumBig = NumPts1;
+        //	NumBig = NumPts1;
 		FireSmall = Fire2;
 		FireBig = Fire1;
 	}

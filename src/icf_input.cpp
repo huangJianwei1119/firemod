@@ -897,7 +897,7 @@ FILE *fh, *tmp;
 {*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{*}{**/
 int ICF::RAWS_WeatherData (int *ai)
 {
-int i, j,i_Arg, iN_Recs, i_Mth, i_Day,i_Year;
+     int i, j,i_Arg, iN_Recs, i_Mth, i_Day; /* i_Year */
 int M,D,H;
 float f;
 #define eC_Un 20
@@ -959,7 +959,7 @@ float wr[e_wr];
        return 0; }
 
 /* copy data into class                                 */
-     i_Year = (int) wr[0];  /* See Note-3 above */
+     /* i_Year = (int) wr[0]; */ /* See Note-3 above */
      i_Mth = (int) wr[1];
      i_Day = (int) wr[2];
     // if (ICF::isLeapYearDay(i_Mth,i_Day) )  /* See Note-2 above */
@@ -1639,14 +1639,14 @@ int m,d,y, mm, dd, yy, t;
 ************************************************************************/
 int ICF::CondMthDay (long *al_conditmonth,long *al_conditday)
 {
-int m,d,y, mm, dd, yy, t;
+     int m,d,y, mm, dd, yy; /* t */
 
 /* Daily Weather data - start at begining plus one day */
    if ( this->a_Wtr != NULL ) {               /* if we have this daily of weather data */
      m = this->a_Wtr[0].i_Mth;
      d = this->a_Wtr[0].i_Day;
      y = this->a_Wtr[0].i_Year;
-     t = 0;                                   /* daily weather data starts at begin of day */
+     //t = 0;                        /* daily weather data starts at begin of day */
      if ( !ICF::NextDay(m,d,y,&mm,&dd,&yy) )  /* date of the very next day */
         return 0; }                           /* invalid date send in */
 
@@ -1655,7 +1655,8 @@ int m,d,y, mm, dd, yy, t;
      mm = this->a_RAWS[0].i_Mth;
      dd = this->a_RAWS[0].i_Day;
      yy = this->a_RAWS[0].i_Yr;
-     t = this->a_RAWS[0].i_Time; }
+     //t = this->a_RAWS[0].i_Time;
+   }
    else
      return 0;
 

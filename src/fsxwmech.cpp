@@ -840,14 +840,14 @@ double Mechanix::spreadrate(long slope, double windspd, int fuel)
           ndead=4;
 
      double nclas[2]={ndead,nlive};  // # of dead & live fuel classes
-    	double xmext[2]={newfuel.xmext, 0};
+     double xmext[2]={newfuel.xmext, 0};
 
-    	double load[4][2]=			     // tons per acre, later converted to lb/ft2
-	{	{newfuel.h1, newfuel.lh},
-		{newfuel.h10, newfuel.lw},
-		{newfuel.h100, 0.0},
-		{0.0, 0.0},
-	};
+     double load[4][2]=			     // tons per acre, later converted to lb/ft2
+          {	{newfuel.h1, newfuel.lh},
+            {newfuel.h10, newfuel.lw},
+            {newfuel.h100, 0.0},
+            {0.0, 0.0},
+          };
 
      depth=newfuel.depth;
 

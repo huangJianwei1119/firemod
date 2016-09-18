@@ -1238,13 +1238,13 @@ DBFHandle SHPAPI_CALL DBFCloneEmpty(DBFHandle psDBF, const char* pszFilename)
 	if (newDBF == NULL)
 		return (NULL); 
         void* t1_void;
-	void* t2_void;
+        //void* t2_void;
 
 	//((void *) (newDBF->pszHeader)) = (void *) malloc(32 * psDBF->nFields);
 	
-	t1_void = (void *) malloc(32 * psDBF->nFields);
-	t2_void = (void *) (newDBF->pszHeader);
-	t2_void = t1_void;
+	//t1_void = (void *) malloc(32 * psDBF->nFields);
+	//t2_void = (void *) (newDBF->pszHeader);
+	//t2_void = t1_void;
 
 	memcpy(newDBF->pszHeader, psDBF->pszHeader, 32 * psDBF->nFields);
 
@@ -1281,11 +1281,11 @@ DBFHandle SHPAPI_CALL DBFCloneEmpty(DBFHandle psDBF, const char* pszFilename)
 		sizeof(int) * psDBF->nFields);
 	//((void *) newDBF->pachFieldType) = (void *)
 	//	malloc(sizeof(int) * psDBF->nFields);
-	void* t9_void;
-	void* t10_void;
-	t9_void = (void*) malloc(sizeof(int) * psDBF->nFields);
-	t10_void = (void*) (newDBF->pachFieldType);
-	t10_void = t9_void;
+//	void* t9_void;
+	//void* t10_void;
+//	t9_void = (void*) malloc(sizeof(int) * psDBF->nFields);
+//	t10_void = (void*) (newDBF->pachFieldType);
+//	t10_void = t9_void;
 	memcpy(newDBF->pachFieldType, psDBF->pachFieldType,
 		sizeof(int) * psDBF->nFields);
 

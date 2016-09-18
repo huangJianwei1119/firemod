@@ -4700,7 +4700,7 @@ void Farsite5::CondenseRings(long RingNum)
 		return;
 
 	FireRing* ring1, * ring2;
-	long i, j, TotalPts;
+	long i, j; /* TotalPts */
 	long NewRingNum;//=GetNumRings();
 	long NewStructNum;
 
@@ -4718,7 +4718,7 @@ void Farsite5::CondenseRings(long RingNum)
 		if (ring1->perimpoints == NULL)
 		{
 			FreeFireRing(i);
-			TotalPts = 0;
+			// TotalPts = 0;
 			for (j = i + 1; j < GetNumRings(); j++)
 			{
 				ring2 = GetRing(j);
@@ -4726,7 +4726,7 @@ void Farsite5::CondenseRings(long RingNum)
 					continue;
 				if (ring2->perimpoints)
 				{
-					TotalPts = ring2->NumPoints[ring2->NumFires - 1];
+                     //TotalPts = ring2->NumPoints[ring2->NumFires - 1];
 					ring1->perimpoints = ring2->perimpoints;
 					ring1->NumPoints = ring2->NumPoints;
 					ring2->perimpoints = 0;
@@ -10425,7 +10425,7 @@ int Farsite5::SetBarrier(char *_barrierFileName)
 	{
 		return 0;//must load ignitions first!
 	}
-		long i, j, NumPts, NumAlloc, NumSeg, cellx, celly;
+    long i, j, NumPts, NumSeg, cellx, celly; /* NumAlloc */
 		double x, y, x1, x2, y1, y2, dx, dy, dist, fract, res, linedist;
 		res = Header.XResol;
 		dist=res/IGNITON_GRID_LINEDIST_DIVISOR;
@@ -10446,7 +10446,7 @@ int Farsite5::SetBarrier(char *_barrierFileName)
 			return FALSE;
 		}
 		SHPGetInfo( hSHP, &nShapes, &shapeType, adfMinBound, adfMaxBound );
-		NumAlloc=0;
+		// NumAlloc=0;
 		for(int s = 0; s < nShapes; s++ )
 		{
 			pShape = SHPReadObject( hSHP, s );
@@ -10687,7 +10687,7 @@ int Farsite5::CreateIgnitionGrid()
 	crowndata igCrown;
 	grounddata igGround;
 	long garbage;
-		long i, j, NumPts, NumAlloc, NumSeg, cellx, celly;
+    long i, j, NumPts, NumSeg, cellx, celly; /* NumAloc */
 		double x, y, x1, x2, y1, y2, dx, dy, dist, fract, res, linedist;
 		res = Header.XResol;
 		dist=res/IGNITON_GRID_LINEDIST_DIVISOR;
@@ -10711,7 +10711,7 @@ int Farsite5::CreateIgnitionGrid()
 			return FALSE;
 		}
 		SHPGetInfo( hSHP, &nShapes, &shapeType, adfMinBound, adfMaxBound );
-		NumAlloc=0;
+		//NumAlloc=0;
 		for(int s = 0; s < nShapes; s++ )
 		{
 			pShape = SHPReadObject( hSHP, s );
@@ -10997,7 +10997,7 @@ void Farsite5::CleanPerimeters()
 
 void Farsite5::AddCurrPerimeter()
 {
-	int NumVertices;//, NumParts;
+     // int NumVertices;//, NumParts;
 	//int		*PartsArray;
 	long InOut, count;//, NumRecord;
 	long NumVertex;
@@ -11010,7 +11010,7 @@ void Farsite5::AddCurrPerimeter()
 		return;
 
 	NumVertex = GetNumPoints(CurrentFire);
-	NumVertices = NumVertex + 1;
+	//NumVertices = NumVertex + 1;
 	CPerimeterData *newData = new CPerimeterData();
 	newData->SetNumPts(NumVertex + 1);
 
@@ -11804,9 +11804,9 @@ void Farsite5::WritePerimeter2Shapefile(int num, long curFire)
 		VertexX = new double[n];
 		VertexY = new double[n];
 		VertexZ=new double[n];
-		double startX, startY;
-		startX = GetPerimeter2Value(0, XCOORD);
-		startY = GetPerimeter2Value(0, YCOORD);
+		//double startX, startY;
+		//startX = GetPerimeter2Value(0, XCOORD);
+		//startY = GetPerimeter2Value(0, YCOORD);
 		for(int i = 0; i < n; i++)
 		{
 			VertexX[i] = GetPerimeter2Value(i, XCOORD);

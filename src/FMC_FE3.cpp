@@ -434,7 +434,7 @@ void FE2::Load_CurHist (DeadMoistureHistory *CurHist, d_RAWS *a_RAWS, int i_Elev
 // ****************************************************************************
 void FmsThread::StartFmsThread_RAWS(long ID, long sizeclass, DeadMoistureDescription *mxdesc, bool firsttime)
 {
-X_HANDLE hFmsThread;
+//X_HANDLE hFmsThread;
 
     FuelSize = sizeclass;
     FirstTime = firsttime;
