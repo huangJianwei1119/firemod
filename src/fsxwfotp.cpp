@@ -861,7 +861,7 @@ int OutputFile::WriteFile(long Type)
 {
 	double xres, yres;
 	char RasterCopy[256] = "";
-	long numcells;
+	//long numcells;
 	double MetersToKm = 1.0;
 		North = pFarsite->GetHiNorth();
 		South = pFarsite->GetLoNorth();
@@ -871,7 +871,7 @@ int OutputFile::WriteFile(long Type)
 	pFarsite->GetRastRes(&xres, &yres);
 	numcols = (long) ((East - West) / xres);//((GetEastUtm()-GetWestUtm())/xres);
 	numrows = (long) ((North - South) / yres);//((GetNorthUtm()-GetSouthUtm())/yres);
-	numcells = numrows * numcols;
+	//numcells = numrows * numcols;
 	memset(RasterCopy, 0x0, sizeof RasterCopy);
 	strcpy(RasterCopy, pFarsite->GetRasterFileName(Type));
 
@@ -913,15 +913,15 @@ int OutputFile::WriteFile(long Type)
 				pFarsite->ConvertEastingOffsetToUtm(West)) < 0)
 				return CloseAndReturn(otpfile, e_EMS_FILE_WRITE_ERROR);
 		}
-		if(fprintf(otpfile, "%s     %ld\n", "rows:", numrows) < 0)
+		if(fprintf(otpfile, "%s     %d\n", "rows:", numrows) < 0)
 				return CloseAndReturn(otpfile, e_EMS_FILE_WRITE_ERROR);
-		if(fprintf(otpfile, "%s     %ld\n", "cols:", numcols) < 0)
+		if(fprintf(otpfile, "%s     %d\n", "cols:", numcols) < 0)
 				return CloseAndReturn(otpfile, e_EMS_FILE_WRITE_ERROR);
 		break;
 	case 5:
-		if(fprintf(otpfile, "%s %ld\n", "NCOLS", numcols) < 0)
+		if(fprintf(otpfile, "%s %d\n", "NCOLS", numcols) < 0)
 				return CloseAndReturn(otpfile, e_EMS_FILE_WRITE_ERROR);
-		if(fprintf(otpfile, "%s %ld\n", "NROWS", numrows) < 0)
+		if(fprintf(otpfile, "%s %d\n", "NROWS", numrows) < 0)
 				return CloseAndReturn(otpfile, e_EMS_FILE_WRITE_ERROR);
 		if (pFarsite->GetNorthUtm() == 0.0 || pFarsite->GetEastUtm() == 0.0)
 		{

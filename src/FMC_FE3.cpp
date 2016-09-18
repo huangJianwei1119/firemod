@@ -651,7 +651,7 @@ long i, j, NumHist,NumAlloc;
 			fprintf(fout, "\tNumAspects: %ld\n", MxDesc.NumAspects[i][j]);
 			fprintf(fout, "\tNumCovers:  %ld\n", MxDesc.NumCovers[i][j]);
 			fprintf(fout, "\tNumFuels:   %ld\n", MxDesc.NumFuels[i][j]);
-			fprintf(fout, "\tFuelKey:    %ld\n", MxDesc.FuelKey[i][j]);
+			fprintf(fout, "\tFuelKey:    %ld\n", MxDesc.FuelKey[i][j]); // warning
 			fprintf(fout, "\tNumHist:    %ld\n", MxDesc.NumHist[i][j]);
 			fprintf(fout, "\tEndTime:    %f\n", MxDesc.EndTime[i][j]);		}	}
 

@@ -3358,7 +3358,6 @@ long Farsite5::SetWeatherData(long StationNumber, long NumObs, long month, long 
 ****************************************************************************/
 long Farsite5::AllocWindData(long StatNum, long NumObs)
 {
-int i;
 	long StationNumber = StatNum;
 
 	if (wddt[StationNumber])	{
@@ -3380,7 +3379,7 @@ int i;
 			   StationNumber = -1;
 
 // WN-Test
-    for ( i = 0; i < nmemb; i++ )
+    for (unsigned long i = 0; i < nmemb; i++ )
        wddt[StationNumber][i].a_FWN = NULL;
 
   }

@@ -539,7 +539,7 @@ bool FE2::AllocHistory (long Station, long FuelSize)
      	return false;
 
   memset (CurHist[Station][FuelSize]->Moisture, 0x0, MxDesc.NumAlloc[Station][FuelSize] * sizeof(double));
-  for(int i = 0; i < MxDesc.NumAlloc[Station][FuelSize]; i++)
+  for(unsigned long i = 0; i < MxDesc.NumAlloc[Station][FuelSize]; i++)
 		CurHist[Station][FuelSize]->Moisture[i] = -1.0;
 	 CurHist[Station][FuelSize]->next = 0;
 
@@ -1509,7 +1509,7 @@ FmsThread::~FmsThread()
 // ****************************************************************************
 void FmsThread::StartFmsThread(long ID, long sizeclass, DeadMoistureDescription *mxdesc, bool firsttime)
 {
-X_HANDLE hFmsThread;
+//X_HANDLE hFmsThread;
 
     FuelSize = sizeclass;
     FirstTime = firsttime;

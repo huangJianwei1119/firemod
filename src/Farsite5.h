@@ -295,11 +295,11 @@ public:
 	double landY;
 };
 
-#if UINT_MAX == 65535
-typedef long int32;
-#else
+//#if UINT_MAX == 65535
+//#typedef long int32;
+//#else
 typedef int int32;
-#endif
+//#endif
 typedef struct
 {// header for landscape file
 	int32 CrownFuels;         // 20 if no crown fuels, 21 if crown fuels exist
